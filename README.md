@@ -1,1 +1,1 @@
-# edwardtan.github.io
+for your gambling pleasures
