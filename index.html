@@ -1,1 +1,100 @@
-Hello World
+<body>
+    <p>Usage: use the dropdowns to select player level, unit, and action. 
+    <br>The action 'Use' specifies using Loaded Dice on selected unit, displaying all possible units sorted by their associated probability of appearing. 
+    <br>The action 'Roll' specifies using Loaded Dice to roll for selected unit, displaying all units that share at least one trait with the selected unit as well as the probability of the selected unit appearing if Loaded Dice were used on that unit. 
+    <br>The probabilities do not take into account statistics like the number of units remaining, because getting exact probabilities would require knowledge of other boards and shops.
+    <br>Thus, the probabilities and rankings are just general guidelines and not absolute, you should exercise your own judgement to make the final decision. i.e., if you were level six using Loaded Dice on Kindred and three other players have Kindred 2 while no one has a single Yuumi, you're probably more likely to roll Yuumi than Kindred.
+    </p>
+    <form action='https://loadeddice-api-heroku.herokuapp.com/api/search' method='GET'>
+        <div>
+            <select name='args1'>
+                <optgroup label='player level'>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <select name='args2'>
+                <optgroup label='unit'>
+                    <option value='Aatrox'>Aatrox</option>
+                    <option value='Akali'>Akali</option>
+                    <option value='Annie'>Annie</option>
+                    <option value='Aurelion Sol'>Aurelion Sol</option>
+                    <option value='Azir'>Azir</option>
+                    <option value='Brand'>Brand</option>
+                    <option value='Braum'>Braum</option>
+                    <option value="Cho'Gath">Cho'Gath</option>
+                    <option value='Darius'>Darius</option>
+                    <option value='Diana'>Diana</option>
+                    <option value='Elise'>Elise</option>
+                    <option value='Fiora'>Fiora</option>
+                    <option value='Garen'>Garen</option>
+                    <option value='Irelia'>Irelia</option>
+                    <option value='Janna'>Janna</option>
+                    <option value='Jarvan IV'>Jarvan IV</option>
+                    <option value='Jax'>Jax</option>
+                    <option value='Kalista'>Kalista</option>
+                    <option value='Katarina'>Katarina</option>
+                    <option value='Kayle'>Kayle</option>
+                    <option value='Kennen'>Kennen</option>
+                    <option value='Kindred'>Kindred</option>
+                    <option value='Lee Sin'>Lee Sin</option>
+                    <option value='Lulu'>Lulu</option>
+                    <option value='Maokai'>Maokai</option>
+                    <option value='Morgana'>Morgana</option>
+                    <option value='Nasus'>Nasus</option>
+                    <option value='Nautilus'>Nautilus</option>
+                    <option value='Neeko'>Neeko</option>
+                    <option value='Nidalee'>Nidalee</option>
+                    <option value='Nunu & Willump'>Nunu & Willump</option>
+                    <option value='Olaf'>Olaf</option>
+                    <option value='Ornn'>Ornn</option>
+                    <option value='Pyke'>Pyke</option>
+                    <option value='Rakan'>Rakan</option>
+                    <option value='Samira'>Samira</option>
+                    <option value='Sejuani'>Sejuani</option>
+                    <option value='Sett'>Sett</option>
+                    <option value='Shen'>Shen</option>
+                    <option value='Shyvana'>Shyvana</option>
+                    <option value='Sivir'>Sivir</option>
+                    <option value='Swain'>Swain</option>
+                    <option value='Tahm Kench'>Tahm Kench</option>
+                    <option value='Talon'>Talon</option>
+                    <option value='Teemo'>Teemo</option>
+                    <option value='Tristana'>Tristana</option>
+                    <option value='Tryndamere'>Tryndamere</option>
+                    <option value='Twisted Fate'>Twisted Fate</option>
+                    <option value='Veigar'>Veigar</option>
+                    <option value='Vi'>Vi</option>
+                    <option value='Vladimir'>Vladimir</option>
+                    <option value='Wukong'>Wukong</option>
+                    <option value='Xayah'>Xayah</option>
+                    <option value='Yasuo'>Yasuo</option>
+                    <option value='Yone'>Yone</option>
+                    <option value='Yuumi'>Yuumi</option>
+                    <option value='Zed'>Zed</option>
+                    <option value='Zilean'>Zilean</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <select name='args3'>
+                <optgroup label='action'>
+                    <option value=Use>Use</option>
+                    <option value=Roll>Roll</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <button>Calculate</button>
+        </div>
+    </form>
+</body>
